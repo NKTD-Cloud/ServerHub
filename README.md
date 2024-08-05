@@ -1,3 +1,5 @@
+![NKTDCLOUD Logo](https://github.com/NKTD-Cloud/.github/blob/main/images/logo.png)
+
 # NKTD.CLOUD ServerHub
 
 NKTD.CLOUD ServerHub ist eine Flask-basierte Webanwendung zur Verwaltung und Anzeige von Serverinformationen. Diese Anwendung umfasst Benutzeranmeldung, Serverdetails und Downloadfunktionen sowie Fehlerbehandlung und Sicherheitsmaßnahmen.
