@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/server_detail.css') }}">
+
+<div class="server-detail">
+    <div class="card-section server-header"
+         style="background-image: url('{{ url_for('static', filename=server.icon) }}');">
+        <div class="server-content">
+            <h1 class="server-name">{{ server.name }}</h1>
+            <p class="server-game">{{ server.game }}</p>
+            <p class="server-address">{{ server.address }}</p>
+            <p class="server-description">{{ server.description }}</p>
+        </div>
+    </div>
+    <div class="card-section server-downloads">
+        <h2>Downloads</h2>
+        {% if server.downloads and server.downloads|length > 0 %}
+        {% for file in server.downloads %}
+        <button class="btn-download" onclick="location.href='{{ url_for('static', filename=file.url) }}'">{{
+            file.url.split('/')[-1] }}
+        </button>
+        {% endfor %}
+        {% else %}
+        <p>Keine Downloads verfügbar.</p>
+        {% endif %}
+    </div>
+    <div class="card-section server-instructions">
+        <div class="instructions-content">
+            {% if server.instructions and server.instructions != "" %}
+            {{ server.instructions | safe }}
+            {% else %}
+            <h2>Keine Anleitung verfügbar.</h2>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

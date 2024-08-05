@@ -1,0 +1,18 @@
+{
+  "servers": [
+    {
+      "id": 1,
+      "name": "Server Name",
+      "description": "Server Description",
+      "game": "Server Game",
+      "address": "Server Address",
+      "icon": "icons/server.jpg",
+      "downloads": [
+        {
+          "url": "downloads/serverPack.zip"
+        }
+      ],
+      "instructions": "Server Instructions with Markdown"
+    }
+  ]
+}

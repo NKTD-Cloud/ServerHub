@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    animation: fadeIn 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.25s ease-in-out forwards;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 0 15px;
+}
+
+.error-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.intro-card {
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: auto;
+    height: 50px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.1));
+    margin-top: 20px;
+    position: absolute;
+    bottom: 20px;
+}
+
+.app-title {
+    color: #1e90ff;
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.intro-text {
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+}
+
+.main-error {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff6347;
+}
+
+.error-actions {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+}
+
+.btn-error {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #1e90ff !important;
+    padding: 15px 30px;
+    border-radius: 6px;
+    color: #2c2c2c !important;
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-error:hover {
+    background: #1c86ee !important;
+    transform: scale(1.02);
+}
+
+.btn-error:active {
+    background: #1a7dd6 !important;
+    transform: scale(0.98);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #333;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+@media (max-width: 460px) {
+    .app-title {
+        font-size: 3.5rem;
+    }
+
+    .intro-text {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+}

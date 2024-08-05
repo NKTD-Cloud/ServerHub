@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NKTD.CLOUD ServerHub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body id="body">
+<div class="container">
+    <div class="login-wrapper">
+        <div class="intro-card">
+            <h1 class="app-title">ServerHub</h1>
+            <p class="intro-text">Spiele mit Freunden und entdecke die Welt</p>
+            <p class="intro-text">um dich herum auf ServerHub.</p>
+        </div>
+        <form class="login-form" method="POST" action="{{ url_for('login') }}" id="loginForm">
+            {{ form.hidden_tag() }}
+            {{ form.password(class="form-control", placeholder="Passwort") }}
+
+            <div class="form-actions">
+                {{ form.submit(class="btn-login", id="loginButton") }}
+            </div>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+            <hr>
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+        </form>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/template_fade.js') }}"></script>
+</body>
+
+</html>

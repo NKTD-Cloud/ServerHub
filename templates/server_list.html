@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/server_list.css') }}">
+
+<div class="server-list">
+    {% for server in servers %}
+    <a href="{{ url_for('server_detail', server_id=server.id) }}" class="server-card"
+       style="background-image: url('{{ url_for('static', filename=server.icon) }}');">
+        <div class="server-content">
+            <h2 class="server-name">{{ server.name }} ({{ server.game }})</h2>
+            <p class="server-address">{{ server.address }}</p>
+            <p class="server-description">{{ server.description }}</p>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
+{% endblock %}
